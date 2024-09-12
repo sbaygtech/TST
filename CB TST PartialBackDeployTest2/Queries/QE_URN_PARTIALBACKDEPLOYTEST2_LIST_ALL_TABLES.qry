@@ -1,0 +1,16 @@
+<query id="9600000350291074" name="QE_URN_PARTIALBACKDEPLOYTEST2_LIST_ALL_TABLES" platform="1" queryType="0">
+  <queryText>SELECT OWNER, TABLE_NAME as TABLE_NAME  FROM ALL_TABLES T&#xd;
+	  &lt;if&gt;&#xd;
+ 	  &lt;isSet&gt;OWNER&lt;/isSet&gt;&#xd;
+	  &lt;then&gt;WHERE T.OWNER = ?&lt;/then&gt;&#xd;
+ 	  &lt;/if&gt;</queryText>
+  <explanation>This name can be used.</explanation>
+  <version>1</version>
+  <componentId>9990000221059678</componentId>
+  <lastUpdated>1525457406767</lastUpdated>
+  <componentCmsOid>9990000221059678</componentCmsOid>
+  <param oid="0" name="OWNER" type="1" paramOrder="1">
+    <queryOid>0</queryOid>
+    <value defaultValue="%" preText="" postText=""/>
+  </param>
+</query>

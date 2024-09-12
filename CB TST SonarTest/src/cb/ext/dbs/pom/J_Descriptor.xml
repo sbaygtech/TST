@@ -1,0 +1,691 @@
+<COMPONENT PVERSION="pom.2">
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSAutoTransferPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="debitAccount"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="creditAccount"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="accountingDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="totalAmount" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="int" INC="0" NAME="totalCount"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="prodOperRefNo" BTYPE="UrunIslemRefNo"/>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSComopanyMasterProcessFileExceptionPrmPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="methodCode"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="exceptionCode"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="exceptionDescription"/>
+        <FIELD HISTORYFIELD="0" JTYPE="int" INC="0" NAME="active"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="adkDescription"/>
+        <FINDER RTYPE="MANY" NAME="findByCompanyOIDAndActive" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+            <PARAM OP="=" MPNAME="active" NAME="active"/>
+        </FINDER>
+        <FINDER RTYPE="ONE" NAME="findByCompanyOidAndMethodCodeActive" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+            <PARAM OP="=" MPNAME="methodCode" NAME="methodCode"/>
+            <PARAM OP="=" MPNAME="active" NAME="active"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyAccountPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="currency"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="blockageAccountNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="accountNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="int" INC="0" NAME="blockageDayCount"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="active"/>
+        <FINDER RTYPE="MANY" NAME="findByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+        </FINDER>
+        <FINDER RTYPE="ONE" NAME="findByCompanyOIDandCurrency" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+            <PARAM OP="=" MPNAME="currency" NAME="currency"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDebtFileDefinitionPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="fileTypeCode"/>
+        <FINDER RTYPE="ONE" NAME="findByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDebtFileDetailExceptionPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="detailOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="exceptionCode"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="exceptionDescription"/>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDebtFileDetailExtensionPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="detailOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="invoiceDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="discountInterestAmount" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="collectingAmount" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="collectingCurrencyCode"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="discountIntrstCollAmount" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="collectingExchangeRate" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="invoiceNumber"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="transactionDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="provisionRefNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="parameter"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="invoiceType"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="debtCurrencyCode"/>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDebtFileDetailPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="customerNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="customerTitle"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="dueDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="recordType"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="invoiceNo"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="invoiceAmount" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="currency" BTYPE="DovizKodu"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="processStatu"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="processExplanation"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="fileOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="masterOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="specialExceptionCode"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="invoiceRefNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="invoiceType"/>
+        <FINDER RTYPE="ONE" NAME="findDebtFileDetailByMasterOid" FU="0">
+            <PARAM OP="=" MPNAME="masterOID" NAME="masterOID"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDebtFileHeaderPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="insertDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="insertTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="fileName"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="fileSequenceNumber"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="fileDate"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="companyCode"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="documentID"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="mailID"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="fileCurrency"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="districtCode"/>
+        <FINDER RTYPE="ONE" NAME="findByFileDateandFileName" FU="0">
+            <PARAM OP="=" MPNAME="fileDate" NAME="fileDate"/>
+            <PARAM OP="=" MPNAME="fileName" NAME="fileName"/>
+            <PARAM OP="=" MPNAME="companyCode" NAME="companyCode"/>
+        </FINDER>
+        <FINDER RTYPE="ONE" NAME="findByFileNameAndCompanyCode" FU="0">
+            <PARAM OP="=" MPNAME="fileName" NAME="fileName"/>
+            <PARAM OP="=" MPNAME="companyCode" NAME="companyCode"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDebtFileMasterExceptionPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="masterOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="exceptionCode"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="exceptionDescription"/>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDebtFileMasterPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="customerNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="customerTitle"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="dueDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="invoiceAmount" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="invoiceNo"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="currency" BTYPE="DovizKodu"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="insertDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="insertTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="updateDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="updateTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="deleteDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="deleteTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="processStatu"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="processExplanation"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="productOpRefNo" BTYPE="UrunIslemRefNo"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="processDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="accountingDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="processTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="dealerOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="transfered"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="transferProductOpRefNo" BTYPE="UrunIslemRefNo"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="paidAmount" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="channelCode"/>
+        <FIELD HISTORYFIELD="0" JTYPE="long" INC="0" NAME="sequenceNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="invoiceRefNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="invoiceType"/>
+        <FIELD HISTORYFIELD="0" JTYPE="CBDate" INC="0" NAME="cancelDate"/>
+        <FIELD HISTORYFIELD="0" JTYPE="long" INC="0" NAME="cancelProductOpRefNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="CBCurrency" INC="0" NAME="cancelAmount"/>
+        <FINDER RTYPE="ONE" NAME="findByCompanyOIDandInvoiceNo" FU="0">
+            <PARAM OP="=" MPNAME="companyID" NAME="companyID"/>
+            <PARAM OP="=" MPNAME="invoiceNo" NAME="invoiceNo"/>
+        </FINDER>
+        <FINDER RTYPE="ONE" NAME="findByCompanyOIDandInvoiceNoActive" FU="0">
+            <PARAM OP="=" MPNAME="companyID" NAME="companyID"/>
+            <PARAM OP="=" MPNAME="invoiceNo" NAME="invoiceNo"/>
+            <PARAM OP="IN" MPNAME="processStatu" HARDCODED="S00,S02" NAME="processStatu"/>
+        </FINDER>
+        <FINDER RTYPE="MANY" NAME="findByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="companyID" NAME="companyID"/>
+        </FINDER>
+        <FINDER RTYPE="MANY" NAME="findByCompanyOIDandTransferedandAccountingDate" FU="0">
+            <PARAM OP="=" MPNAME="companyID" NAME="companyID"/>
+            <PARAM OP="=" MPNAME="transfered" NAME="transfered"/>
+            <PARAM OP="=" MPNAME="accountingDate" NAME="accountingDate"/>
+        </FINDER>
+        <FINDER RTYPE="ONE" NAME="findByCompanyOIDAndInvoiceNoPayment" FU="0">
+            <PARAM OP="=" MPNAME="companyID" NAME="companyID"/>
+            <PARAM OP="=" MPNAME="invoiceNo" NAME="invoiceNo"/>
+            <PARAM OP="IN" MPNAME="processStatu" HARDCODED="S01,S04" NAME="processStatu"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDebtFileRecordTypeParamPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="mapRecordType"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="companyRecordType"/>
+        <FINDER RTYPE="ONE" NAME="findByCompanyOIDAndRecordType" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+            <PARAM OP="=" MPNAME="companyRecordType" NAME="companyRecordType"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDebtFileResultEMailPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="email"/>
+        <FINDER RTYPE="MANY" NAME="findByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDebtFileResultFileExceptionPrmPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="methodCode"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="exceptionCode"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="exceptionDescription"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="active"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="adkDescription"/>
+        <FINDER RTYPE="MANY" NAME="findByCompanyOidAndMethodCodeActive" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+            <PARAM OP="=" MPNAME="methodCode" NAME="methodCode"/>
+            <PARAM OP="=" MPNAME="active" HARDCODED="1" NAME="active"/>
+        </FINDER>
+        <FINDER RTYPE="MANY" NAME="findByCompanyOIDAndActive" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+            <PARAM OP="=" MPNAME="active" HARDCODED="1" NAME="active"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDebtFileResultParamPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="1" JTYPE="boolean" INC="0" NAME="mailingEnabled"/>
+        <FIELD HISTORYFIELD="1" JTYPE="String" INC="0" NAME="fileCompanyCode"/>
+        <FIELD HISTORYFIELD="1" JTYPE="boolean" INC="0" NAME="textFileEnabled"/>
+        <FIELD HISTORYFIELD="1" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="textFileType"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="textFileName"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="sendDebtFileList"/>
+        <FINDER RTYPE="ONE" NAME="findByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+        </FINDER>
+        <FINDER RTYPE="MANY" NAME="findCompaniesToSendWaitingDebtList" FU="0">
+            <PARAM OP="=" MPNAME="status" HARDCODED="1" NAME="status"/>
+            <PARAM OP="=" MPNAME="sendDebtFileList" HARDCODED="1" NAME="sendDebtFileList"/>
+            <PARAM ORDERBY="1" OBT="ASC" NAME="oID"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDebtFileTrailerPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" JTYPE="int" INC="0" NAME="invoiceTotalCountNew"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="invoiceTotalAmountNew" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" JTYPE="long" INC="0" NAME="invoiceTotalCountCancel"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="invoiceTotalAmountCancel" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" JTYPE="long" INC="0" NAME="invoiceTotalCountUpdate"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="invoiceTotalAmountUpdate" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="headerOID" BTYPE="Oid"/>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDebtProcessForeignCurConversionPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="masterOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="transactionAmount" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="transactionCurrencyCode"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="transactionRate" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="sourceAmount" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="sourceCurrencyCode"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="processDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="processTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="invoiceAmount" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="invoiceCurrencyCode"/>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyDocumentPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" JTYPE="long" INC="0" NAME="companyOid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="int" INC="0" NAME="documentCode"/>
+        <FINDER RTYPE="MANY" NAME="findCompanyDocuments" FU="0">
+            <PARAM OP="=" MPNAME="companyOid" NAME="companyOid"/>
+            <PARAM ORDERBY="1" OBT="ASC" NAME="documentCode"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyLimitFileEMailPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="email"/>
+        <FINDER RTYPE="MANY" NAME="findByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyLimitFileParamPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="1" JTYPE="boolean" INC="0" NAME="mailingEnabled"/>
+        <FIELD HISTORYFIELD="1" JTYPE="boolean" INC="0" NAME="textFileEnabled"/>
+        <FIELD HISTORYFIELD="1" JTYPE="boolean" INC="0" NAME="dealerDefSentMail"/>
+        <FIELD HISTORYFIELD="1" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="int" INC="0" NAME="accountOption"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="limitFileName"/>
+        <FINDER RTYPE="ONE" NAME="findByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyLimitFileReportPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="reportSequenceNumber"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="active"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="companyTitle"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="dealerTitle"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="customerNumber" BTYPE="MusteriNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="companyDealerCusCode"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="tlAccountNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="usdAccountNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="currency"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="limit" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="availableLimit" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="unPaidInvoice" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="availableDBS" BTYPE="Tutar"/>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyLimitFileSchedulePOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="time"/>
+        <FINDER RTYPE="MANY" NAME="findByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+            <PARAM ORDERBY="1" OBT="ASC" NAME="time"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="1" BAGKEY="ACTIVE" JTYPE="boolean" INC="0" NAME="active"/>
+        <FIELD HISTORYFIELD="1" BAGKEY="CODE1" JTYPE="String" INC="0" NAME="companyInternalCode"/>
+        <FIELD HISTORYFIELD="1" BAGKEY="CUSTOMERNUMBER" INC="0" NAME="customerNumber" BTYPE="MusteriNo"/>
+        <FIELD HISTORYFIELD="1" BAGKEY="METHOD" JTYPE="int" INC="0" NAME="workingMethod"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="insertUser"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="insertDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="insertTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="updUser"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="updDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="updTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="KMHMETOD_NAME" JTYPE="String" INC="0" NAME="KMHMethodName"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LIMITAMOUNT" INC="0" NAME="companyTotalLimit" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="PERIOD" JTYPE="int" INC="0" NAME="companyMaturityPeriod"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="VALUE0" JTYPE="int" INC="0" NAME="companyProcessDayCount"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="TYPE1" JTYPE="int" INC="0" NAME="companyLimitGapType"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="PARTIALCOLLECTION" JTYPE="boolean" INC="0" NAME="partialPayment"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="currencyProcessMethod"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="exchangeRate"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="exchangeRateType"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="dealerCodeFormatType"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="localCurrencyCodeType"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="debtFileSendType"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="loadedOverLimitDebt"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="manuelPaymentBeforeDueDate"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="companyName"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="addDealerWithSameCustomerNumber"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="guarantorship"/>
+        <FIELD HISTORYFIELD="0" JTYPE="CBCurrency" INC="0" NAME="guarantorshipWaitingTime"/>
+        <FIELD HISTORYFIELD="0" JTYPE="CBCurrency" INC="0" NAME="kmhLimitRate"/>
+        <FIELD HISTORYFIELD="0" JTYPE="int" INC="0" NAME="dbsType"/>
+        <FINDER RTYPE="ONE" NAME="findByInternalCode" FU="0">
+            <PARAM OP="=" MPNAME="companyInternalCode" NAME="companyInternalCode"/>
+        </FINDER>
+        <FINDER RTYPE="ONE" NAME="findByCustomerNo" FU="0">
+            <PARAM OP="=" MPNAME="customerNumber" NAME="customerNumber"/>
+        </FINDER>
+        <FINDER RTYPE="ONE" NAME="findByKMHMethodName" FU="0">
+            <PARAM OP="=" MPNAME="KMHMethodName" NAME="KMHMethodName"/>
+        </FINDER>
+        <FINDER RTYPE="ONE" NAME="findByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="oID" NAME="oID"/>
+        </FINDER>
+        <FINDER RTYPE="MANY" NAME="findByAllRecords" FU="0">
+            <PARAM ORDERBY="1" OBT="ASC" NAME="insertDate"/>
+            <PARAM ORDERBY="2" OBT="ASC" NAME="insertTime"/>
+        </FINDER>
+        <FINDER RTYPE="MANY" NAME="findManuelPaymentBeforeDueDate" FU="0">
+            <PARAM OP="=" MPNAME="manuelPaymentBeforeDueDate" HARDCODED="1" NAME="manuelPaymentBeforeDueDate"/>
+        </FINDER>
+        <FINDER RTYPE="ONE" NAME="findByCustomerNoAndDBSType" FU="0">
+            <PARAM OP="=" MPNAME="customerNumber" NAME="customerNumber"/>
+            <PARAM OP="=" MPNAME="dbsType" NAME="dbsType"/>
+        </FINDER>
+        <FINDER RTYPE="MANY" NAME="findByDbsType" FU="0">
+            <PARAM OP="=" MPNAME="dbsType" NAME="dbsType"/>
+            <PARAM ORDERBY="1" OBT="ASC" NAME="companyInternalCode"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyParameterPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" JTYPE="long" INC="0" NAME="companyOid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="key"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="value"/>
+        <FINDER RTYPE="ONE" NAME="findCompanyParameterValueByKey" FU="0">
+            <PARAM OP="=" MPNAME="companyOid" NAME="companyOid"/>
+            <PARAM OP="=" MPNAME="key" NAME="key"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyProcessDebtPaymentExtensionPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="masterOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="paymentAmount" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="paymentDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="paymentTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="productOperationRefNo" BTYPE="UrunIslemRefNo"/>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyProcessFileEMailPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="emailAddress"/>
+        <FINDER RTYPE="MANY" NAME="findByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyProcessFileParamPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="fileEnabled"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="mailingEnabled"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="processFileName"/>
+        <FINDER RTYPE="ONE" NAME="findByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyResultFileSchedulePOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" JTYPE="long" INC="0" NAME="companyOid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="time"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="useLimit"/>
+        <FINDER RTYPE="MANY" NAME="findByCompanyOid" FU="0">
+            <PARAM OP="=" MPNAME="companyOid" NAME="companyOid"/>
+            <PARAM ORDERBY="1" OBT="ASC" NAME="time"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSCompanyTotalFCDailyPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="amount" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="processDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="currency"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="processTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" JTYPE="CBCurrency" INC="0" NAME="exchangeRate"/>
+        <FIELD HISTORYFIELD="0" JTYPE="CBCurrency" INC="0" NAME="tryAmount"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="dealerOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="masterOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="long" INC="0" NAME="sequenceNo"/>
+        <FINDER RTYPE="ONE" NAME="findByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSDealerAccountsPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="dealerOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="accountNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="currency"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="active"/>
+        <FINDER RTYPE="MANY" NAME="findByDealerOID" FU="0">
+            <PARAM OP="=" MPNAME="dealerOID" NAME="dealerOID"/>
+        </FINDER>
+        <FINDER RTYPE="ONE" NAME="findByDealerOIDandCurrency" FU="0">
+            <PARAM OP="=" MPNAME="dealerOID" NAME="dealerOID"/>
+            <PARAM OP="=" MPNAME="currency" NAME="currency"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSDealerGuarantorPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" JTYPE="long" INC="0" NAME="companyOid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="long" INC="0" NAME="dealerOid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="CBDate" INC="0" NAME="startDate"/>
+        <FIELD HISTORYFIELD="0" JTYPE="CBDate" INC="0" NAME="finishDate"/>
+        <FIELD HISTORYFIELD="0" JTYPE="int" INC="0" NAME="active"/>
+        <FINDER RTYPE="ONE" NAME="findActiveDealerGuarantor" FU="0">
+            <PARAM OP="=" MPNAME="companyOid" NAME="companyOid"/>
+            <PARAM OP="=" MPNAME="dealerOid" NAME="dealerOid"/>
+            <PARAM OP="=" MPNAME="active" HARDCODED="1" NAME="active"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSDealerKTHTransferPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="debitAccount"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="creditAccount"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="transferAmount" BTYPE="Tutar"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="processDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="processTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="currency"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="productOpRefNo" BTYPE="UrunIslemRefNo"/>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSDealerPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="1" BAGKEY="ACTIVE" JTYPE="boolean" INC="0" NAME="active"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="companyOID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="customerNumber" BTYPE="MusteriNo"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="insertDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="insertTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="insertUser"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="updDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="updTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="updUser"/>
+        <FIELD HISTORYFIELD="1" BAGKEY="CODE1" JTYPE="String" INC="0" NAME="companyDealerCustomerCode"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="productRefNo" BTYPE="UrunRefNo"/>
+        <FINDER RTYPE="MANY" NAME="findByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+        </FINDER>
+        <FINDER RTYPE="ONE" NAME="findByCompanyDealerCustCode" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+            <PARAM OP="=" MPNAME="companyDealerCustomerCode" NAME="companyDealerCustomerCode"/>
+        </FINDER>
+        <FINDER RTYPE="MANY" NAME="findByCustomerNumberandCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="customerNumber" NAME="customerNumber"/>
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+        </FINDER>
+        <FINDER RTYPE="MANY" NAME="findByCompanyOIDAndActive" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+            <PARAM OP="=" MPNAME="active" NAME="active"/>
+        </FINDER>
+        <FINDER RTYPE="MANY" NAME="findByAllRecords" FU="0">
+            <PARAM ORDERBY="1" NAME="customerNumber"/>
+        </FINDER>
+        <FINDER RTYPE="ONE" NAME="findByCompanyOidAndDealerCustomerCode" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+            <PARAM OP="=" MPNAME="companyDealerCustomerCode" NAME="companyDealerCustomerCode"/>
+        </FINDER>
+        <FINDER RTYPE="MANY" NAME="findDealersByCompanyOid" FU="0">
+            <PARAM OP="=" MPNAME="companyOID" NAME="companyOID"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSDealerUploadDocPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="documentID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="explanation"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="fileName"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="uploadDate" BTYPE="Tarih"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="uploadTime" BTYPE="Saat"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="uploader"/>
+        <FIELD HISTORYFIELD="0" INC="0" NAME="dealerOID" BTYPE="Oid"/>
+        <FINDER RTYPE="MANY" NAME="findByDealerOID" FU="0">
+            <PARAM OP="=" MPNAME="dealerOID" NAME="dealerOID"/>
+        </FINDER>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSDebtFileTypePOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="fileCode"/>
+        <FIELD HISTORYFIELD="0" JTYPE="String" INC="0" NAME="debtFileType"/>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSPaymentResultHistoryPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" JTYPE="CBDate" INC="0" NAME="createdDate"/>
+        <FIELD HISTORYFIELD="0" JTYPE="CBTime" INC="0" NAME="createdTime"/>
+        <FIELD HISTORYFIELD="0" JTYPE="long" INC="0" NAME="masterOid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="long" INC="0" NAME="sequenceNo"/>
+        <FIELD HISTORYFIELD="0" JTYPE="CBCurrency" INC="0" NAME="paidAmount"/>
+        <FIELD HISTORYFIELD="0" JTYPE="int" INC="0" NAME="processType"/>
+    </MODEL>
+    <MODEL PARENT="false" CHILD="false">
+        <NAME>DBSSendDebtListMailToDealerParamPOM</NAME>
+        <SUPER>POM</SUPER>
+        <FIELD HISTORYFIELD="0" BAGKEY="OID" INC="0" NAME="oID" BTYPE="Oid"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="STATUS" INC="0" NAME="status" BTYPE="ST"/>
+        <FIELD HISTORYFIELD="0" BAGKEY="LASTUPDATED" INC="0" NAME="lastUpdated" BTYPE="LU"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="sendMailToDealer"/>
+        <FIELD HISTORYFIELD="0" JTYPE="int" INC="0" NAME="dayCount"/>
+        <FIELD HISTORYFIELD="0" JTYPE="CBTime" INC="0" NAME="batchTime"/>
+        <FIELD HISTORYFIELD="0" JTYPE="long" INC="0" NAME="companyOid"/>
+        <FIELD HISTORYFIELD="0" JTYPE="boolean" INC="0" NAME="sendSmsToDealer"/>
+        <FINDER RTYPE="ONE" NAME="readByCompanyOID" FU="0">
+            <PARAM OP="=" MPNAME="companyOid" NAME="companyOid"/>
+        </FINDER>
+    </MODEL>
+</COMPONENT>

@@ -1,0 +1,102 @@
+package cb.ext.dbs.constants;
+
+public interface DBSExceptions {
+	
+	 int CLASSNOT_FOUND                        = 2064588;
+	 
+	 int DBS_GENERAL_ERROR					   = 2064432;
+	
+	 int LIMITFILE_SECOND_00                   = 2064453;
+	 int LIMITFILE_TIME_INVALID                = 2064454;
+	 
+	 
+	 int CUSTOMER_EMPTY                        = 2064446;
+	 int COMPANYCODE_EMPTY                     = 2064468;
+	 int CUSTOMERNUMBER_NOT_UNIQUE             = 2064448;
+	 int KMHMETODNAME_EMPTY				       = 2064475;
+	 int COMPANYMATURITYPERIOD_EMPTY		   = 2064564;
+	 int COMPANYDAYCOUNT_EMPTY		           = 2064581;
+	 int MATURITY_GAPTYPE_EMPTY		           = 2064582;
+	 int COMPANY_TOTAL_LIMIT_AMOUNT_NOT_ENOUGH = 2064566;
+	 
+	 
+	 
+	 int DEBTFILERESULT_COMPANYCODE_EMPTY      = 2064447;
+	 
+	 int DEBTFILERESULT_MAIL_EMPTY             = 2064449;
+	 int DEBTFILERESULT_MAIL_INVALID           = 2064450;
+	 int DEBTFILERESULT_MAIL_LENGTH_ERROR      = 2064451;
+	 
+	 
+	 
+	 
+	 int LIMITFILE_NO_SCHEDULE                 = 2064452;
+	 
+	 int LIMITFILE_MAIL_EMPTY                  = 2064583;
+	 int LIMITFILE_MAIL_INVALID                = 2064584;
+	 int LIMITFILE_MAIL_LENGTH_ERROR           = 2064585;
+	 
+	 
+	 int PROCESSFILE_MAIL_EMPTY                = 3450050;
+	 int PROCESSFILE_MAIL_INVALID              = 3450051;
+	 int PROCESSFILE_MAIL_LENGTH_ERROR         = 3450052;
+	 
+	 
+	 int COMPANYACCOUNT_NOT_SET                = 2064460;
+	 int ACCOUNT_CURRENCY_EXIST                = 2064455;
+	 int ACCOUNT_CURRENCY_EMPTY                = 2064456;
+	 int BLOKAGEACCOUNT_EMPTY                  = 2064457;
+	 int CURRENTACCOUNT_EMPTY                  = 2064458;
+	 int COMPANYACCOUNT_BLOKAGE_DAY_EMPTY      = 2064459;
+	 
+	 
+	 
+	 int COMPANY_CANT_DELETE_WITHOUT_DEALER    = 2064474; 
+	 
+	 
+	 int DEALER_ACCOUNT_KTH_NOT			       = 2064476;
+	 int DEALER_ACCOUNT_NOT_SET                = 2064587;
+	 
+	 int COMPANYDEALERCUSTOMERNUM_EMPTY        = 2064472;
+	 int DEALER_NOT_UNIQUE                     = 2064586;
+	 int COMPANYDEALERCUSTOMERNUM_NOT_UNIQUE   = 2064473;
+	 
+	 int DEALER_CURRENCY_TYPE_NOT_TRY		   = 2064565;
+	 
+	 
+
+	/* Info messages */
+	 
+	 int COMPANY_LIST_NOT_FOUND              = 2264182;
+	
+	 int COMPANY_DEFINITION_DONE             = 2264181;
+	 int COMPANY_UPDATE_DONE                 = 2264183;
+	 int COMPANY_DELETE_DONE                 = 2264184;
+	
+
+	 
+	 int DEALER_LIST_NOT_FOUND               = 2264186;
+	 int DEALER_DEFINITION_DONE              = 2264187;
+	 int DEALER_UPDATE_DONE                  = 2264188;
+	 int DEALER_DELETE_DONE                  = 2264189;
+
+	 int DEALER_KTH_TRANSFER_DONE			 = 2260037; 
+
+	
+	
+	 int RESULTFILE_NO_SCHEDULE                 = 2064632;
+	 int RESULTFILE_SECOND_00                   = 2064633;
+	 int RESULTFILE_TIME_INVALID                = 2064634;
+	 
+	 int PERSONEL_DBS_GUARANTORSHIP_EXPIRED = 2064689;
+	 int PERSONEL_DBS_PAID_DEBT_NOT_FOUND = 2064690;
+	 int PERSONEL_DBS_INVALID_PAID_DEBT = 2064691;
+	 int PERSONEL_DBS_PAYMENT_AMOUNT_NOT_EQUAL_CANCEL_AMOUNT = 4000161;
+
+	 int PERSONEL_DBS_COMPANY_NOT_FOUND = 4000146;
+	 int PERSONEL_DBS_COMPANY_NOT_ACTIVE = 4000147;
+	 int PERSONEL_DBS_DEALER_NOT_FOUND = 4000148;
+	 int PERSONEL_DBS_DEALER_NOT_ACTIVE = 4000149;
+	
+	 
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="var" path="COREBANKING_SMG/SMGUtility_classes.jar" sourcepath="COREBANKING_SMG/SMGUtility_javas.jar"/>
+	<classpathentry kind="var" path="COREBANKING_SMG/SMGBatch_classes.jar" sourcepath="COREBANKING_SMG/SMGBatch_javas.jar"/>
+	<classpathentry kind="var" path="COREBANKING_SMG/SMGBagKeys_classes.jar" sourcepath="COREBANKING_SMG/SMGBagKeys_javas.jar"/>
+	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
+	<classpathentry kind="var" path="COREBANKING_SMG/SMGConfiguration_classes.jar" sourcepath="COREBANKING_SMG/SMGConfiguration_javas.jar"/>
+	<classpathentry kind="var" path="COREBANKING_SMG/SMGFileTransferleriUtility_classes.jar" sourcepath="/COREBANKING_SMG/SMGFileTransferleriUtility_javas.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
+	<classpathentry kind="var" path="COREBANKING_SMG/SMGPOM_classes.jar" sourcepath="COREBANKING_SMG/SMGPOM_javas.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
