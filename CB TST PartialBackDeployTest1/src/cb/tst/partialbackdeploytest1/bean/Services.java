@@ -23,6 +23,7 @@ public class Services implements CBBagKeys {
 			if (inBag.existsBagKey(OWNER)) {
 				queryExecuter.setParameter("OWNER", inBag.get(OWNER).toString());
 			}
+			//test
 			queryExecuter.executeQuery();
 			for (int i = 0; queryExecuter.next(); i++) {
 				outBag.put(TABLE, i, OWNER, queryExecuter.getString("OWNER"));
