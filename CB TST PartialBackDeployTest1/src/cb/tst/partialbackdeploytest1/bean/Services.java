@@ -10,7 +10,7 @@ import cb.smg.general.utility.CBSMGExceptions;
 public class Services implements CBBagKeys {
 
 	/**
-	 * @servicename URN_PARTIALBACKDEPLOYTEST1_LIST_ALL_TABLESss
+	 * @servicename URN_PARTIALBACKDEPLOYTEST1_LIST_ALL_TABLESssss
 	 * @param inBag
 	 * @return
 	 * @throws CBException
