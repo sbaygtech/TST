@@ -44,6 +44,7 @@ public class Services implements CBBagKeys {
 				queryExecuter.close();
 			}
 		}
+		//
 		return outBag;
 	}
 }
