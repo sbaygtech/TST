@@ -1,0 +1,49 @@
+<fbml pid="TST20012" size="1024,768" t="$type$" v="$version$">
+   <interface>
+      <structure>
+         <bean class="cb.smg.fde.JFBPanelBase" id="FRE.SinglePage">
+            <style>
+               <p name="title">This is Testing screen!  ONE </p>
+               <p name="bounds">10,10,775,500</p>
+            </style>
+            <bean class="cb.smg.fde.bean.JFBButton" id="SinglePage.JFBButton59406">
+               <style>
+                  <p name="bounds">70,110,110,25</p>
+               </style>
+            </bean>
+            <bean class="cb.smg.fde.bean.JFBTable" id="SinglePage.CREDITTABLE">
+               <style>
+                  <p name="adapterInfo">OWNER~TEXT_ADAPTER~contenttype~Plain~$TABLENAME~TEXT_ADAPTER~contenttype~Plain~$</p>
+                  <p name="deletable">false</p>
+                  <p name="editable">false</p>
+                  <p name="extendable">false</p>
+                  <p name="headerInfo">141~OWNER~OWNER~true~false$196~TABLENAME~TABLENAME~true~false$</p>
+                  <p name="sendColumnWise">true</p>
+                  <p name="bounds">230,10,444,114</p>
+               </style>
+            </bean>
+            <bean class="jfbComponents.JFBTextField" id="SinglePage.JFBTextField54333">
+               <style>
+                  <p name="text">SMG</p>
+                  <p name="bounds">60,60,110,25</p>
+               </style>
+            </bean>
+         </bean>
+      </structure>
+      <events>
+         <lC id="SinglePage.JFBButton59406" n="actionPerformed">
+            <rC s="URN_PARTIALBACKDEPLOYTEST1_LIST_ALL_TABLES">
+               <i>
+                  <p id="SinglePage.JFBTextField54333" n="OWNER"></p>
+               </i>
+               <o>
+                  <p id="SinglePage.CREDITTABLE" n="TABLE"></p>
+               </o>
+            </rC>
+         </lC>
+      </events>
+   </interface>
+   <data></data>
+   <navigation></navigation>
+   <ruleset></ruleset>
+</fbml>
