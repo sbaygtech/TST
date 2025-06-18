@@ -45,13 +45,13 @@ public class Services implements CBBagKeys {
 			}
 		}
 		//
-<<<<<<< HEAD
+
 		//
 		//test
 		//test2
-=======
+
 		//test
->>>>>>> branch 'ofisuat' of https://github.com/sbaygtech/TST.git
+
 		return outBag;
 	}
 }
